@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.Logging;
+using Sharpnado.Tabs;
 using Syncfusion.Maui.Core.Hosting;
 
 namespace MauiLab
@@ -10,6 +11,7 @@ namespace MauiLab
             var builder = MauiApp.CreateBuilder();
             builder
                 .UseMauiApp<App>()
+                .UseSharpnadoTabs(loggerEnable: false)
                 .ConfigureFonts(fonts =>
                 {
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");

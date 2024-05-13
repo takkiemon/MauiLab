@@ -49,47 +49,52 @@
                 SemanticProperties.Hint="Counts the number of times you click"
                 Clicked="OnCounterClicked"
                 HorizontalOptions="Fill" />
+            
+            <!--  Example of segmented tab bar (rounded floating tabs)  -->
+            <tabs:TabHostView Grid.Row="2"
+                    WidthRequest="280"
+                    HeightRequest="60"
+                    Margin="15"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Start"
+                    CornerRadius="30"
+                    IsSegmented="True"
+                    TabType="Fixed"
+                    SelectedIndex="{Binding Source={x:Reference Switcher}, Path=SelectedIndex, Mode=TwoWay}">
+                <tabs:TabHostView.Tabs>
+                    <tabs:BottomTabItem IconImageSource="house_96.png" Label="labelly">
+                        <tabs:BottomTabItem.Badge>
+                            <tabs:BadgeView x:Name="TargetBadge"
+                                BackgroundColor="White"
+                                TextColor="DarkGoldenrod"
+                                            HorizontalOptions="Center"
+                                            VerticalOptions="Center"
+                                            RotationY="0"
+                                            RotationX="0"
+                                            Rotation="45"
+                                Text="999+" />
+                        </tabs:BottomTabItem.Badge>
+                    </tabs:BottomTabItem>
+                    <tabs:BottomTabItem IconImageSource="list_96.png" Label="Checkity">
+                        <tabs:BottomTabItem.Badge>
+                            <tabs:BadgeView BackgroundColor="DodgerBlue"
+                                BadgePadding="4,2"
+                                TextSize="13"
+                                Text="Billy" />
+                        </tabs:BottomTabItem.Badge>
+                    </tabs:BottomTabItem>
+                    <tabs:BottomTabItem IconImageSource="grid_view_96.png" Label="testou toastou">
+                        <tabs:BottomTabItem.Badge>
+                            <tabs:BadgeView Margin="20,5"
+                                BackgroundColor="Red"
+                                ShowIndicator="True"
+                                TextSize="14"
+                                Text="3" />
+                        </tabs:BottomTabItem.Badge>
+                    </tabs:BottomTabItem>
+                </tabs:TabHostView.Tabs>
+            </tabs:TabHostView>
         </VerticalStackLayout>
     </ScrollView>
-    <tabs:TabHostView
-          x:Name="Tabs"
-          HorizontalOptions="Fill"
-          VerticalOptions="End"
-          HeightRequest="{x:OnIdiom Tablet=80, Phone=80}"
-          MinimumHeightRequest="80"
-          TabType="Fixed"
-          BackgroundColor="White"
-          Padding="0">
-        <tabs:TabHostView.Shadow>
-            <Shadow Brush="Black"
-                Radius="10"
-                Opacity="0.04"
-                Offset="0,-5" />
-        </tabs:TabHostView.Shadow>
-        <tabs:TabHostView.Tabs>
-            <components:SyncTabItem UnselectedLabelColor="{DynamicResource AppConstants_Carbon}" IconSize="{x:OnIdiom Tablet=30, Phone=30}" Margin="10">
-                <components:SyncTabItem.IconImageSource>
-                    <shared:FontAwesomeImageSource HybridGlyph="{Static shared:FontAwesomeIcon.FASync}" Color="{DynamicResource AppConstants_Carbon}" Size="{x:OnIdiom Tablet=30, Phone=30}"/>
-                </components:SyncTabItem.IconImageSource>
-            </components:SyncTabItem>
-
-            <tabs:BottomTabItem Label="{i18n:Translate Settings}" UnselectedLabelColor="{DynamicResource AppConstants_Carbon}" IconSize="{x:OnIdiom Tablet=30, Phone=30}" Margin="10">
-                <tabs:BottomTabItem.IconImageSource>
-                    <shared:FontAwesomeImageSource HybridGlyph="{Static shared:FontAwesomeIcon.FACog}" Color="{DynamicResource AppConstants_Carbon}" Size="{x:OnIdiom Tablet=30, Phone=30}"/>
-                </tabs:BottomTabItem.IconImageSource>
-            </tabs:BottomTabItem>
-
-            <tabs:BottomTabItem Label="{i18n:Translate Logout}" UnselectedLabelColor="{DynamicResource AppConstants_Carbon}" IconSize="{x:OnIdiom Tablet=30, Phone=30}" Margin="10">
-                <tabs:BottomTabItem.IconImageSource>
-                    <shared:FontAwesomeImageSource HybridGlyph="{Static shared:FontAwesomeIcon.FASignOutAlt}" Color="{DynamicResource AppConstants_Carbon}" Size="{x:OnIdiom Tablet=30, Phone=30}"/>
-                </tabs:BottomTabItem.IconImageSource>
-            </tabs:BottomTabItem>
-
-            <tabs:BottomTabItem Label="{i18n:Translate Back}" UnselectedLabelColor="{DynamicResource AppConstants_Carbon}" IconSize="{x:OnIdiom Tablet=30, Phone=30}" Margin="10">
-                <tabs:BottomTabItem.IconImageSource>
-                    <shared:FontAwesomeImageSource HybridGlyph="{Static shared:FontAwesomeIcon.FAReply}" Color="{DynamicResource AppConstants_Carbon}" Size="{x:OnIdiom Tablet=30, Phone=30}"/>
-                </tabs:BottomTabItem.IconImageSource>
-            </tabs:BottomTabItem>
-        </tabs:TabHostView.Tabs>
-    </tabs:TabHostView>
+    
 </ContentPage>
