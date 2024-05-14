@@ -4,7 +4,11 @@
              xmlns:fa="clr-namespace:MauiLab;assembly=MauiLab"
              xmlns:sf="clr-namespace:Syncfusion.Maui.Core;assembly=Syncfusion.Maui.Core"
              xmlns:tabs="http://sharpnado.com"
-             x:Class="MauiLab.MainPage">
+             x:Class="MauiLab.MainPage"
+             Shell.TabBarIsVisible="True"
+             Shell.BackgroundColor="LightCoral"
+             Shell.ForegroundColor="Yellow"
+             Shell.TitleColor="DarkBlue">
 
     <ScrollView>
         <VerticalStackLayout

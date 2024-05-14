@@ -4,12 +4,36 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:MauiLab"
+    xmlns:view="clr-namespace:MauiLab.Views"
     Shell.FlyoutBehavior="Disabled"
     Title="MauiLab">
 
-    <ShellContent
-        Title="Home"
-        ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
+
+        <!-- Main tabbar, used for all navigation -->
+    <TabBar x:Name="TabBar"
+            IsVisible="True"
+            Route="tabbar">
+        <Tab x:Name="firstTab">
+            <ShellContent
+                    Title="Pokemon"
+                    ContentTemplate="{DataTemplate view:Pokemon}"
+                    Route="pokemon">
+            </ShellContent>
+        </Tab>
+        <Tab x:Name="secondTab"
+             Route="mainpage"/>
+            <ShellContent
+                    Title="Home"
+                    ContentTemplate="{DataTemplate local:MainPage}">
+            </ShellContent>
+        <Tab x:Name="thirdTab"
+             Route="supermario">
+            <ShellContent
+                    Title="Supah Mario"
+                    ContentTemplate="{DataTemplate view:SuperMario}"
+                    Route="MainPage">
+            </ShellContent>
+        </Tab>
+    </TabBar>
 
 </Shell>
