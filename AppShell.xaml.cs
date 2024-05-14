@@ -19,10 +19,12 @@ namespace MauiLab
 
         public void RegisterRoutes()
         {
-            Routing.RegisterRoute(nameof(MainPage), typeof(MainPage));
-            Routing.RegisterRoute(nameof(Pokemon), typeof(Pokemon));
-            Routing.RegisterRoute(nameof(SuperMario), typeof(SuperMario));
-            //Routing.RegisterRoute(Routes.Pokemon, new AppRouteFactory<Pokemon>());
+            //Routing.RegisterRoute(nameof(MainPage), typeof(MainPage));
+            //Routing.RegisterRoute(nameof(Pokemon), typeof(Pokemon));
+            //Routing.RegisterRoute(nameof(SuperMario), typeof(SuperMario));
+            Routing.RegisterRoute(Routes.MainPage, new AppRouteFactory<MainPage>());
+            Routing.RegisterRoute(Routes.Pokemon, new AppRouteFactory<Pokemon>());
+            Routing.RegisterRoute(Routes.SuperMario, new AppRouteFactory<SuperMario>());
         }
 
         private Tab CreateTab()

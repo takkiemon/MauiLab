@@ -13,12 +13,9 @@
 
         private void OnCounterClicked(object sender, EventArgs e)
         {
-            Shell.Current.GoToAsync("pokemon");
-            //TargetBadge.HeightRequest = 100;
-            //TargetBadge.WidthRequest = 100;
             count++;
 
-            //TargetBadge.Rotation += 15;
+            TargetBadge.Rotation += 15;
 
             if (count == 1)
                 CounterBtn.Text = $"Clicked {count} time";

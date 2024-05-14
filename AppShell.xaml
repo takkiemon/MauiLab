@@ -10,10 +10,9 @@
 
 
         <!-- Main tabbar, used for all navigation -->
-    <TabBar x:Name="TabBar"
-            IsVisible="True"
-            Route="tabbar">
-        <Tab x:Name="firstTab">
+    <TabBar x:Name="TabBar">
+        <Tab x:Name="firstTab"
+             Title="Pokemon">
             <ShellContent
                     Title="Pokemon"
                     ContentTemplate="{DataTemplate view:Pokemon}"
@@ -21,17 +20,19 @@
             </ShellContent>
         </Tab>
         <Tab x:Name="secondTab"
-             Route="mainpage"/>
+             Title="Home">
             <ShellContent
                     Title="Home"
-                    ContentTemplate="{DataTemplate local:MainPage}">
+                    ContentTemplate="{DataTemplate local:MainPage}"
+                    Route="mainpage">
             </ShellContent>
+        </Tab>
         <Tab x:Name="thirdTab"
-             Route="supermario">
+             Title="Mario">
             <ShellContent
                     Title="Supah Mario"
                     ContentTemplate="{DataTemplate view:SuperMario}"
-                    Route="MainPage">
+                    Route="supermario">
             </ShellContent>
         </Tab>
     </TabBar>
