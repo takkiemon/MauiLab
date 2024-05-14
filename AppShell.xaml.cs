@@ -19,9 +19,9 @@ namespace MauiLab
 
         public void RegisterRoutes()
         {
-            Routing.RegisterRoute("mainpage", typeof(MainPage));
-            Routing.RegisterRoute("pokemon", typeof(Pokemon));
-            Routing.RegisterRoute("supermario", typeof(SuperMario));
+            Routing.RegisterRoute(nameof(MainPage), typeof(MainPage));
+            Routing.RegisterRoute(nameof(Pokemon), typeof(Pokemon));
+            Routing.RegisterRoute(nameof(SuperMario), typeof(SuperMario));
             //Routing.RegisterRoute(Routes.Pokemon, new AppRouteFactory<Pokemon>());
         }
 
