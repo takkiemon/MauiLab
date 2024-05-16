@@ -10,9 +10,11 @@
              Shell.ForegroundColor="Yellow"
              Shell.TitleColor="DarkBlue">
 
-    <ScrollView>
+    <ScrollView
+            VerticalOptions="Fill">
         <VerticalStackLayout
             Padding="30,0"
+            VerticalOptions="Fill"
             Spacing="25">
             <Image
                 Source="dotnet_bot.png"
@@ -59,27 +61,33 @@
                     WidthRequest="280"
                     HeightRequest="60"
                     Margin="15"
-                    HorizontalOptions="Center"
-                    VerticalOptions="Start"
+                    HorizontalOptions="Fill"
+                    VerticalOptions="Fill"
                     CornerRadius="30"
                     IsSegmented="True"
                     TabType="Fixed"
                     SelectedIndex="{Binding Source={x:Reference Switcher}, Path=SelectedIndex, Mode=TwoWay}">
                 <tabs:TabHostView.Tabs>
-                    <tabs:BottomTabItem IconImageSource="house_96.png" Label="labelly">
+                    <tabs:BottomTabItem x:Name="FirstTab"
+                                        IconImageSource="house_96.png" 
+                                        Label="labelly">
                         <tabs:BottomTabItem.Badge>
                             <tabs:BadgeView x:Name="TargetBadge"
                                 BackgroundColor="White"
                                 TextColor="DarkGoldenrod"
-                                            HorizontalOptions="Center"
-                                            VerticalOptions="Center"
+                                            HorizontalOptions="End"
+                                            VerticalOptions="Start"
                                             RotationY="0"
                                             RotationX="0"
                                             Rotation="45"
-                                Text="999+" />
+                                            Text="&#xf021;"
+                                            TextSize="35"
+                                FontFamily="FontAwesome" />
                         </tabs:BottomTabItem.Badge>
                     </tabs:BottomTabItem>
-                    <tabs:BottomTabItem IconImageSource="list_96.png" Label="Checkity">
+                    <tabs:BottomTabItem x:Name="SecondTab"
+                                        IconImageSource="list_96.png" 
+                                        Label="Checkity">
                         <tabs:BottomTabItem.Badge>
                             <tabs:BadgeView BackgroundColor="DodgerBlue"
                                 BadgePadding="4,2"
@@ -87,10 +95,13 @@
                                 Text="Billy" />
                         </tabs:BottomTabItem.Badge>
                     </tabs:BottomTabItem>
-                    <tabs:BottomTabItem IconImageSource="grid_view_96.png" Label="testou toastou">
+                    <tabs:BottomTabItem x:Name="ThirdTab"
+                                        Routing.Route="pokemon"
+                                        IconImageSource="grid_view_96.png" 
+                                        Label="testou toastou">
                         <tabs:BottomTabItem.Badge>
                             <tabs:BadgeView Margin="20,5"
-                                BackgroundColor="Red"
+                                BackgroundColor="Coral"
                                 ShowIndicator="True"
                                 TextSize="14"
                                 Text="3" />

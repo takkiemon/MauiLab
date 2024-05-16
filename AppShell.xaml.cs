@@ -32,10 +32,12 @@ namespace MauiLab
             Tab tab = new Tab()
             {
                 Title = "tabTitle",
-                Route = "pokemon"//,
+                Route = "pokemon",//,
                 //Icon = FontAwesomeIcon.FAClockAlt
             };
-            Shell.SetBackgroundColor(tab, Colors.DarkSlateBlue);
+            Shell.SetBackgroundColor(TabBar, Colors.DarkSlateBlue);
+            SetTabBarForegroundColor(TabBar, Colors.DarkGoldenrod);
+            Debug.WriteLine("checkity 002b");
 
             return tab;
         }
