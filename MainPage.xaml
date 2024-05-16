@@ -33,22 +33,6 @@
                 SemanticProperties.HeadingLevel="Level2"
                 SemanticProperties.Description="Welcome to dot net Multi platform App U I" />
 
-            <sf:SfBadgeView BadgeText="&#xF017;"
-                            BackgroundColor="Red" 
-                            WidthRequest="210" 
-                            HeightRequest="45">
-                <sf:SfBadgeView.BadgeSettings>
-                    <sf:BadgeSettings FontFamily="FontAwesome"/>
-                </sf:SfBadgeView.BadgeSettings>
-                <ContentView BackgroundColor="Green"
-                             WidthRequest="200"
-                             HeightRequest="40">
-                    <Label Text="&#xF017;"
-                           FontFamily="FontAwesome"/>
-                    <!-- <fa:FontAwesomeIcon Grid.Row="0" Grid.Column="2" VerticalOptions="Center" HybridText="{x:Static fa:FontAwesomeIcon.FAAngleRight}" FontSize="{StaticResource ListViewArrowTextSize}" TextColor="#D6D6D6" IsVisible="{Binding CanBeOpened}" /> -->
-                </ContentView>
-            </sf:SfBadgeView>
-            
             <Button
                 x:Name="CounterBtn"
                 Text="Click me" 
