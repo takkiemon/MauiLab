@@ -1,54 +1,54 @@
-﻿using MauiLab.Other;
-using System;
+﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace MauiLab.ViewModel
 {
-    public class BottomTabbarViewModel : ANavigableViewModel
+    public class BottomTabbarViewModel : INotifyPropertyChanged
     {
         private int _selectedViewModelIndex = 0;
 
-        public BottomTabbarViewModel(
-            INavigationService navigationService/*,
-            ISillyDudeService sillyDudeService,
-            ErrorEmulator errorEmulator*/)
-            : base(navigationService)
+        public BottomTabbarViewModel()
         {
-            //HomePageViewModel = new HomePageViewModel(navigationService/*, sillyDudeService*/);
-            //GridPageViewModel = new GridPageViewModel(navigationService/*, sillyDudeService*/);
         }
 
         public int SelectedViewModelIndex
         {
             get => _selectedViewModelIndex;
-            set => SetAndRaise(ref _selectedViewModelIndex, value);
+            set
+            {
+                _selectedViewModelIndex = value;
+                RaisePropertyChanged(nameof(_selectedViewModelIndex));
+            }
         }
-
-        //public HomePageViewModel HomePageViewModel { get; }
-
-        //public GridPageViewModel GridPageViewModel { get; }
 
         public bool IsTabVisible { get; set; } = true;
 
-        /*public override void Load(object parameter)
-        {
-            HomePageViewModel.Load(parameter);
-            GridPageViewModel.Load(parameter);
+        public event PropertyChangedEventHandler? PropertyChanged;
 
-            // Uncomment to test tab visibility
-            // TaskMonitor.Create(
-            //    async () =>
-            //    {
-            //        await Task.Delay(10000);
-            //        Device.BeginInvokeOnMainThread(() =>
-            //        {
-            //            IsTabVisible = false;
-            //            RaisePropertyChanged(nameof(IsTabVisible));
-            //        });
-            //    });
-        }*/
+        public void RaisePropertyChanged([CallerMemberName] string propertyName = "")
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+        protected bool Set<T>(
+            ref T field,
+            T newValue,
+            [CallerMemberName] string propertyName = default
+        )
+        {
+            if (EqualityComparer<T>.Default.Equals(field, newValue))
+            {
+                return false;
+            }
+
+            field = newValue;
+            RaisePropertyChanged(propertyName);
+            return true;
+        }
     }
 }
