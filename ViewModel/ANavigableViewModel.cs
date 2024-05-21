@@ -29,7 +29,7 @@ namespace MauiLab.ViewModel
         /// <summary>
         /// The property changed.
         /// </summary>
-        public event PropertyChangedEventHandler PropertyChanged;
+        public event PropertyChangedEventHandler? PropertyChanged;
 
         /// <summary>
         /// The navigation service.
