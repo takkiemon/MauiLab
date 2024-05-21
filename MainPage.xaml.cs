@@ -1,13 +1,17 @@
-﻿namespace MauiLab
+﻿using MauiLab.ViewModel;
+
+namespace MauiLab
 {
     public partial class MainPage : ContentPage
     {
-        public MainPage()
+        public MainPage(BottomTabbarViewModel viewModel)
         {
-            //TargetBadge.HeightRequest = 100;
-            //TargetBadge.WidthRequest = 100;
             InitializeComponent();
+
+            BindingContext = viewModel;
         }
+
+        private BottomTabbarViewModel ViewModel => (BottomTabbarViewModel)BindingContext;
     }
 
 }

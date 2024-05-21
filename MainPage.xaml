@@ -1,15 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+<ContentPage x:Class="MauiLab.MainPage"
+             x:DataType="viewmodel:BottomTabbarViewModel"
+             xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:fa="clr-namespace:MauiLab;assembly=MauiLab"
              xmlns:sf="clr-namespace:Syncfusion.Maui.Core;assembly=Syncfusion.Maui.Core"
              xmlns:views="clr-namespace:MauiLab.Views"
-             xmlns:tabs="http://sharpnado.com"
-             x:Class="MauiLab.MainPage"
-             Shell.TabBarIsVisible="True"
-             Shell.BackgroundColor="LightCoral"
-             Shell.ForegroundColor="Yellow"
-             Shell.TitleColor="DarkBlue">
+             xmlns:viewmodel="clr-namespace:MauiLab.ViewModel"
+             xmlns:tabs="http://sharpnado.com">
 
     <ContentPage.Resources>
         <ResourceDictionary>
@@ -21,8 +19,55 @@
             </Style>
         </ResourceDictionary>
     </ContentPage.Resources>
-            
-            <!--  Example of segmented tab bar (rounded floating tabs)  -->
+
+
+    <Grid Margin="16,0" RowDefinitions="120,*,95">
+
+        <ContentView ZIndex="100">
+            <ContentView.Background>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                    <GradientStop Offset="0.2" Color="{StaticResource Black}" />
+                    <GradientStop Offset="1" Color="Transparent" />
+                </LinearGradientBrush>
+            </ContentView.Background>
+            <Image Margin="0,20" Source="logo.png">
+                <Image.Shadow>
+                    <Shadow Brush="{StaticResource Black}"
+                            Opacity="0.9"
+                            Radius="30"
+                            Offset="0,10" />
+                </Image.Shadow>
+            </Image>
+        </ContentView>
+
+    <tabs:ViewSwitcher x:Name="Switcher"
+                           Grid.RowSpan="3"
+                           Margin="0"
+                           Animate="True"
+                           SelectedIndex="{Binding SelectedViewModelIndex, Mode=TwoWay}">
+        <tabs:DelayedView x:TypeArguments="views:Pokemon"
+                              AccentColor="{StaticResource Primary}"
+                              Animate="True"
+                              UseActivityIndicator="True" />
+        <tabs:DelayedView x:TypeArguments="views:HomeScreen"
+                              AccentColor="{StaticResource Primary}"
+                              Animate="True"
+                              UseActivityIndicator="True" />
+        <tabs:DelayedView x:TypeArguments="views:SuperMario"
+                            AccentColor="{StaticResource Primary}"
+                            Animate="True"
+                            UseActivityIndicator="True" />
+    </tabs:ViewSwitcher>
+
+    <ContentView Grid.Row="2">
+        <ContentView.Background>
+            <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                <GradientStop Offset="0.0" Color="Transparent" />
+                <GradientStop Offset="0.5" Color="{StaticResource Black}" />
+            </LinearGradientBrush>
+        </ContentView.Background>
+
+        <!--  Example of segmented tab bar (rounded floating tabs)  -->
             <tabs:TabHostView Grid.Row="2"
                     WidthRequest="280"
                     HeightRequest="60"
@@ -75,26 +120,7 @@
                     </tabs:BottomTabItem>
                 </tabs:TabHostView.Tabs>
             </tabs:TabHostView>
-    
-    <tabs:ViewSwitcher x:Name="Switcher"
-                           Grid.RowSpan="3"
-                           Margin="0"
-                           Animate="True"
-                           SelectedIndex="{Binding SelectedViewModelIndex, Mode=TwoWay}">
-        <tabs:DelayedView x:TypeArguments="views:Pokemon"
-                              AccentColor="{StaticResource Primary}"
-                              Animate="True"
-                              BindingContext="{Binding HomePageViewModel}"
-                              UseActivityIndicator="True" />
-        <tabs:DelayedView x:TypeArguments="views:Pokemon"
-                              AccentColor="{StaticResource Primary}"
-                              Animate="True"
-                              UseActivityIndicator="True" />
-        <tabs:DelayedView x:TypeArguments="views:SuperMario"
-                              AccentColor="{StaticResource Primary}"
-                              Animate="True"
-                              UseActivityIndicator="True" />
-        <!--<tabs:LazyView x:TypeArguments="views:TabI" Animate="True" />-->
-    </tabs:ViewSwitcher>
+        </ContentView>
+    </Grid>
 
 </ContentPage>

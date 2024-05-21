@@ -7,6 +7,7 @@ namespace MauiLab
     {
         public AppShell()
         {
+            Debug.WriteLine("checkis APPSHELL!");
             InitializeComponent();
             RegisterRoutes();
             CustomInitializer();
@@ -19,10 +20,10 @@ namespace MauiLab
 
         public void RegisterRoutes()
         {
-            //Routing.RegisterRoute(nameof(MainPage), typeof(MainPage));
+            //Routing.RegisterRoute(nameof(HomeScreen), typeof(HomeScreen));
             //Routing.RegisterRoute(nameof(Pokemon), typeof(Pokemon));
             //Routing.RegisterRoute(nameof(SuperMario), typeof(SuperMario));
-            Routing.RegisterRoute(Routes.MainPage, new AppRouteFactory<MainPage>());
+            Routing.RegisterRoute(Routes.HomeScreen, new AppRouteFactory<HomeScreen>());
             Routing.RegisterRoute(Routes.Pokemon, new AppRouteFactory<Pokemon>());
             Routing.RegisterRoute(Routes.SuperMario, new AppRouteFactory<SuperMario>());
         }
@@ -51,7 +52,7 @@ namespace MauiLab
     public static class Routes
     {
         public const string Pokemon = "pokemon";
-        public const string MainPage = "mainpage";
+        public const string HomeScreen = "homescreen";
         public const string SuperMario = "supermario";
     }
 

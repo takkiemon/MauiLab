@@ -9,6 +9,11 @@ public partial class HomeScreen : ContentPage
 		InitializeComponent();
     }
 
+    protected override async void OnAppearing()
+    {
+        base.OnAppearing();
+    }
+
     private void OnCounterClicked(object sender, EventArgs e)
     {
         count++;
