@@ -12,8 +12,11 @@ namespace MauiLab.ViewModel
     {
         private int _selectedViewModelIndex = 0;
 
+        public HomePageViewModel HomePageViewModel { get; }
+
         public BottomTabbarViewModel()
         {
+            HomePageViewModel = new HomePageViewModel();
         }
 
         public int SelectedViewModelIndex
