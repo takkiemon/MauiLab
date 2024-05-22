@@ -8,8 +8,19 @@
              xmlns:sf="clr-namespace:Syncfusion.Maui.Core;assembly=Syncfusion.Maui.Core"
              xmlns:views="clr-namespace:MauiLab.Views"
              xmlns:tabs="http://sharpnado.com">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="BottomTab" TargetType="tabs:BottomTabItem">
+                <Setter Property="SelectedTabColor" Value="{StaticResource Primary}" />
+                <Setter Property="UnselectedLabelColor" Value="{StaticResource White}" />
+                <Setter Property="LabelSize" Value="36" />
+                <Setter Property="FontFamily" Value="OpenSansExtraBold" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
     
-    <!--<ContentPage.Content>-->
+    <ContentPage.Content>
         <!--<VerticalStackLayout
             Padding="30,0"
             VerticalOptions="Fill"
@@ -36,17 +47,6 @@
             SemanticProperties.Hint="Counts the number of times you click"
             HorizontalOptions="Fill" />
         </VerticalStackLayout>-->
-
-    <ContentPage.Resources>
-        <ResourceDictionary>
-            <Style x:Key="BottomTab" TargetType="tabs:BottomTabItem">
-                <Setter Property="SelectedTabColor" Value="{StaticResource Primary}" />
-                <Setter Property="UnselectedLabelColor" Value="{StaticResource White}" />
-                <Setter Property="LabelSize" Value="36" />
-                <Setter Property="FontFamily" Value="OpenSansExtraBold" />
-            </Style>
-        </ResourceDictionary>
-    </ContentPage.Resources>
 
     <Grid Margin="16,0" RowDefinitions="120,*,95">
 
@@ -94,7 +94,8 @@
                     <GradientStop Offset="0.5" Color="{StaticResource Black}" />
                 </LinearGradientBrush>
             </ContentView.Background>
-            <tabs:TabHostView WidthRequest="250"
+            <tabs:TabHostView x:Name="TabBar"
+                              WidthRequest="250"
                               HeightRequest="60"
                               Padding="20,0"
                               HorizontalOptions="Center"
@@ -130,5 +131,5 @@
             </tabs:TabHostView>
         </ContentView>
     </Grid>
-    <!--</ContentPage.Content>-->
+    </ContentPage.Content>
 </ContentPage>

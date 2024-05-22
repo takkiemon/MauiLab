@@ -1,3 +1,5 @@
+using System.Diagnostics;
+
 namespace MauiLab.Views;
 
 public partial class HomieScreen : ContentView
@@ -5,8 +7,9 @@ public partial class HomieScreen : ContentView
     int count = 0;
 
     public HomieScreen()
-	{
-		InitializeComponent();
+    {
+        Debug.WriteLine("checkis eyo waddup");
+        InitializeComponent();
     }
 
     private void OnCounterClicked(object sender, EventArgs e)

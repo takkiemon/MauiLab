@@ -1,9 +1,12 @@
+using System.Diagnostics;
+
 namespace MauiLab.Views;
 
 public partial class SuperLuigi : ContentView
 {
 	public SuperLuigi()
-	{
-		InitializeComponent();
+    {
+        Debug.WriteLine("checkis zzapp!");
+        InitializeComponent();
 	}
 }
