@@ -9,6 +9,11 @@
         VerticalOptions="Fill"
         Spacing="25">
 
+            <Label
+            Text="eeehhhh"
+            Style="{StaticResource Headline}"
+            SemanticProperties.HeadingLevel="Level1" />
+
             <Image
             Source="dotnet_bot.png"
             HeightRequest="185"

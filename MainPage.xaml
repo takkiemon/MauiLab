@@ -51,12 +51,12 @@
     <Grid Margin="16,0" RowDefinitions="120,*,95">
 
         <ContentView ZIndex="100">
-            <ContentView.Background>
+            <!--<ContentView.Background>
                 <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
                     <GradientStop Offset="0.2" Color="{StaticResource Black}" />
                     <GradientStop Offset="1" Color="Transparent" />
                 </LinearGradientBrush>
-            </ContentView.Background>
+            </ContentView.Background>-->
             <Image Margin="0,20" Source="logo.png">
                 <Image.Shadow>
                     <Shadow Brush="{StaticResource Black}"
@@ -77,7 +77,11 @@
                               Animate="True"
                               BindingContext="{Binding HomePageViewModel}"
                               UseActivityIndicator="True" />
-            <tabs:DelayedView x:TypeArguments="views:Digimon"
+                <tabs:DelayedView x:TypeArguments="views:Digimon"
+                              AccentColor="{StaticResource Primary}"
+                              Animate="True"
+                              UseActivityIndicator="True" />
+                <tabs:DelayedView x:TypeArguments="views:SuperLuigi"
                               AccentColor="{StaticResource Primary}"
                               Animate="True"
                               UseActivityIndicator="True" />
@@ -88,12 +92,12 @@
         </tabs:ViewSwitcher>
 
         <ContentView Grid.Row="2">
-            <ContentView.Background>
+            <!--<ContentView.Background>
                 <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
                     <GradientStop Offset="0.0" Color="Transparent" />
                     <GradientStop Offset="0.5" Color="{StaticResource Black}" />
                 </LinearGradientBrush>
-            </ContentView.Background>
+            </ContentView.Background>-->
             <tabs:TabHostView x:Name="TabBar"
                               WidthRequest="250"
                               HeightRequest="60"
@@ -104,6 +108,7 @@
                               IsSegmented="True"
                               Orientation="Horizontal"
                               SegmentedOutlineColor="{StaticResource Gray950}"
+                              SelectedIndex="{Binding Source={x:Reference Switcher}, Path=SelectedIndex, Mode=TwoWay}"
                               TabType="Fixed">
                 <tabs:TabHostView.Shadow>
                     <Shadow Brush="{StaticResource Primary}"
@@ -111,23 +116,23 @@
                             Radius="30"
                             Offset="0,10" />
                 </tabs:TabHostView.Shadow>
-                <tabs:BottomTabItem Label="M" />
-                <tabs:BottomTabItem Label="A">
-                    <tabs:BottomTabItem.Badge>
-                        <tabs:BadgeView BackgroundColor="{StaticResource Tertiary}" Text="new" />
-                    </tabs:BottomTabItem.Badge>
-                </tabs:BottomTabItem>
+                    <tabs:BottomTabItem Label="M" />
+                    <tabs:BottomTabItem Padding="0,0,10,0"
+                                    Label="I">
+                        <tabs:BottomTabItem.Badge>
+                            <tabs:BadgeView BackgroundColor="{StaticResource Tertiary}" Text="2" />
+                        </tabs:BottomTabItem.Badge>
+                    </tabs:BottomTabItem>
+                    <tabs:BottomTabItem Label="A">
+                        <tabs:BottomTabItem.Badge>
+                            <tabs:BadgeView BackgroundColor="{StaticResource Tertiary}" Text="new" />
+                        </tabs:BottomTabItem.Badge>
+                    </tabs:BottomTabItem>
                 <tabs:UnderlinedTabItem FontFamily="OpenSansExtraBold"
                                         Label="U"
                                         LabelSize="36"
                                         SelectedTabColor="{StaticResource Primary}"
                                         UnselectedLabelColor="{StaticResource White}" />
-                <tabs:BottomTabItem Padding="0,0,10,0"
-                                    Label="I">
-                    <tabs:BottomTabItem.Badge>
-                        <tabs:BadgeView BackgroundColor="{StaticResource Tertiary}" Text="2" />
-                    </tabs:BottomTabItem.Badge>
-                </tabs:BottomTabItem>
             </tabs:TabHostView>
         </ContentView>
     </Grid>
