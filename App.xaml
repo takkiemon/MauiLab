@@ -9,6 +9,21 @@
                 <ResourceDictionary Source="Resources/Styles/Colors.xaml" />
                 <ResourceDictionary Source="Resources/Styles/Styles.xaml" />
             </ResourceDictionary.MergedDictionaries>
+
+            <DataTemplate x:Key="DocumentExpanderTemplate">
+                <ViewCell>
+                    <ViewCell.View>
+                        <Label WidthRequest="32"
+                                            HeightRequest="49"
+                                            HorizontalTextAlignment="Center"
+                                            VerticalTextAlignment="Center"
+                                            Margin="0,0,0,5"
+                                            BackgroundColor="{DynamicResource AppConstants_DefaultTaskListInactiveColor}"
+                                            HybridText="{Binding IsExpanded, Converter={StaticResource DocumentsExpandConverter}}"
+                                            FontSize="{StaticResource CaretSize}" />
+                    </ViewCell.View>
+                </ViewCell>
+            </DataTemplate>
         </ResourceDictionary>
     </Application.Resources>
 </Application>

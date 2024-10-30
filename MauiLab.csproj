@@ -57,22 +57,16 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <MauiXaml Remove="Testing\TreeViewTest.xaml" />
-	</ItemGroup>
-
-	<ItemGroup>
-	  <EmbeddedResource Include="Testing\TreeViewTest.xaml">
-	    <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-	  </EmbeddedResource>
-	</ItemGroup>
-
-	<ItemGroup>
 		<PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
 		<PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="$(MauiVersion)" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="8.0.0" />
 		<PackageReference Include="Syncfusion.Maui.Core" Version="27.1.57" />
 		<PackageReference Include="Syncfusion.Maui.Toolkit" Version="1.0.1" />
 		<PackageReference Include="Syncfusion.Maui.TreeView" Version="27.1.57" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Folder Include="Renderers\" />
 	</ItemGroup>
 
 </Project>
