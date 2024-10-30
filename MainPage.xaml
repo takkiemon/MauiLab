@@ -14,7 +14,7 @@
                 Aspect="AspectFit"
                 SemanticProperties.Description="dot net bot in a race car number eight" />
 
-            <syncfusion:SfTreeView BackgroundColor="White" x:Name="FolderList" ItemsSource="FolderItems" ItemTapped="FolderListOnItemTapped" ExpandActionTarget="Node" FullRowSelect="True" IsAnimationEnabled="True">
+            <syncfusion:SfTreeView BackgroundColor="White" x:Name="FolderList" ItemsSource="FolderItems" ExpandActionTarget="Node" FullRowSelect="True" IsAnimationEnabled="True">
                 <syncfusion:SfTreeView.ItemTemplate>
                     <DataTemplate>
                         <Grid Padding="5,0,0,0">

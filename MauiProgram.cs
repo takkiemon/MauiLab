@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.Logging;
+using Syncfusion.Maui.Core.Hosting;
 
 namespace MauiLab
 {
@@ -19,6 +20,7 @@ namespace MauiLab
     		builder.Logging.AddDebug();
 #endif
 
+            builder.ConfigureSyncfusionCore();
             return builder.Build();
         }
     }

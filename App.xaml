@@ -1,6 +1,7 @@
 ﻿<?xml version = "1.0" encoding = "UTF-8" ?>
 <Application xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:ml="clr-namespace:MauiLab;assembly=MauiLab"
              xmlns:local="clr-namespace:MauiLab"
              x:Class="MauiLab.App">
     <Application.Resources>
@@ -13,7 +14,7 @@
             <DataTemplate x:Key="DocumentExpanderTemplate">
                 <ViewCell>
                     <ViewCell.View>
-                        <Label WidthRequest="32"
+                        <ml:FontAwesomeIcon WidthRequest="32"
                                             HeightRequest="49"
                                             HorizontalTextAlignment="Center"
                                             VerticalTextAlignment="Center"
