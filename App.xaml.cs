@@ -1,16 +1,12 @@
-﻿using MauiLab.ViewModel;
-
-namespace MauiLab
+﻿namespace MauiLab
 {
     public partial class App : Application
     {
-        public App(BottomTabbarViewModel viewModel)
+        public App()
         {
             InitializeComponent();
 
-            Current!.UserAppTheme = AppTheme.Dark;
-
-            MainPage = new MainPage(viewModel);
+            MainPage = new AppShell();
         }
     }
 }

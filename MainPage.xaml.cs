@@ -1,17 +1,25 @@
-﻿using MauiLab.ViewModel;
-
-namespace MauiLab
+﻿namespace MauiLab
 {
     public partial class MainPage : ContentPage
     {
-        public MainPage(BottomTabbarViewModel viewModel)
+        int count = 0;
+
+        public MainPage()
         {
             InitializeComponent();
-
-            BindingContext = viewModel;
         }
 
-        private BottomTabbarViewModel ViewModel => (BottomTabbarViewModel)BindingContext;
+        private void OnCounterClicked(object sender, EventArgs e)
+        {
+            count++;
+
+            if (count == 1)
+                CounterBtn.Text = $"Clicked {count} time";
+            else
+                CounterBtn.Text = $"Clicked {count} times";
+
+            SemanticScreenReader.Announce(CounterBtn.Text);
+        }
     }
 
 }
