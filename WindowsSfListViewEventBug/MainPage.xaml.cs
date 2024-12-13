@@ -1,9 +1,16 @@
-﻿namespace WindowsSfListViewEventBug;
+﻿using System.Collections.ObjectModel;
+
+namespace WindowsSfListViewEventBug;
 
 public partial class MainPage : ContentPage
 {
     int count = 0;
-    public List<Item> Items = new List<Item>();
+    public ObservableCollection<Item> ItemList = new();
+    public ObservableCollection<Item> Items
+    {
+        get { return ItemList; }
+        set { ItemList = value; }
+    }
 
     public MainPage()
     {
@@ -31,5 +38,5 @@ public partial class MainPage : ContentPage
 
 public class Item
 {
-    public string ItemText {get; set;}
+    public string ItemText { get; set; }
 }

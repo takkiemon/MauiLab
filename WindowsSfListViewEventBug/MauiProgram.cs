@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.Logging;
+using Syncfusion.Maui.Core.Hosting;
 
 namespace WindowsSfListViewEventBug;
 
@@ -19,6 +20,7 @@ public static class MauiProgram
         builder.Logging.AddDebug();
 #endif
 
+        builder.ConfigureSyncfusionCore();
         return builder.Build();
     }
 }
