@@ -15,10 +15,11 @@
                 Aspect="AspectFit"
                 SemanticProperties.Description="dot net bot in a hovercraft number nine" />
             
-            <sf:SfListView ItemsSource="Items">
+            <sf:SfListView ItemsSource="Items" x:Name="ListViewElement">
                 <sf:SfListView.ItemTemplate>
                     <DataTemplate x:DataType="app:Item">
                         <Label Text="{Binding ItemText}"
+                               TextColor="DarkBlue"
                                HeightRequest="100"
                                WidthRequest="200"/>
                     </DataTemplate>  

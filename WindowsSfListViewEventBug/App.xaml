@@ -10,11 +10,5 @@
                 <ResourceDictionary Source="Resources/Styles/Styles.xaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
-        
-        <ResourceDictionary x:Key="ListViewItemTemplate">
-            <Label WidthRequest="200"
-                   HeightRequest="100"
-                   Text="{Binding}"/>
-        </ResourceDictionary>
     </Application.Resources>
 </Application>
