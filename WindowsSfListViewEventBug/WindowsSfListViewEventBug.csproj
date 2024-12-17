@@ -39,8 +39,11 @@
         <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</SupportedOSPlatformVersion>
         <TargetPlatformMinVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</TargetPlatformMinVersion>
         <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'tizen'">6.5</SupportedOSPlatformVersion>
+    </PropertyGroup>
 
-        <EmbedAssembliesIntoApk>true</EmbedAssembliesIntoApk>
+    <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)'=='Debug|net9.0-android'">
+        <RuntimeIdentifiers>android-arm;android-arm64;android-x64</RuntimeIdentifiers>
+        <EmbedAssembliesIntoApk>false</EmbedAssembliesIntoApk>
     </PropertyGroup>
 
     <ItemGroup>

@@ -12,16 +12,10 @@ public partial class MainPage : ContentPage
     public MainPage()
     {
         InitializeComponent();
-        for (int i = 0; i < 10; i++)
+        for (int i = 0; i < 6; i++)
         {
-            Items.A
+            Items.Add($"Item {i}");
         }
-        Items.Add("Item 1");
-        Items.Add("Check");
-        Items.Add("Test");
-        Items.Add("One Two Three");
-        Items.Add("Message");
-        Items.Add("ASDF");
         ListViewElement.ItemsSource = Items;
         ListViewElement.ItemLongPress += OnItemLongPress;
     }
